@@ -1,0 +1,32 @@
+<script type="text/x-handlebars" data-template-name="main-page">
+  <div class="container">
+    <div id="logo">
+      <img src="NEW-TIXZOO.png" id="tixzoo-logo"/>
+      <h1>Ticket Exchange Simplified<span>.</span></h1>
+    </div>
+    <form id ="email">
+    {{#if hasClicked}}
+      <h1>Thank you for registering, you will be emailed shortly</h1>
+      {{else}}
+      {{#if inputError}}
+        {{input type="email" value=email placeholder="Your email address"}}
+        <div class="btn">
+          <div class="email-btn">
+            <a class="email-btn">join the zoo</a>
+            <div {{action 'clickToggle'}} class="bg"></div>
+          </div>
+        </div>
+        <span style="color: red;">Must input a valid email address</span>
+      {{else}}
+        {{input type="email" value=email placeholder="Your email address"}}
+        <div class="btn">
+          <div class="email-btn">
+            <a class="email-btn">join the zoo</a>
+            <div {{action 'clickToggle'}} class="bg"></div>
+          </div>
+        </div>
+      {{/if}}
+    {{/if}}
+    </form>
+  </div>
+</script>
