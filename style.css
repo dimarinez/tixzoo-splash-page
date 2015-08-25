@@ -1,0 +1,122 @@
+body {
+	background: #dedfe0; /* Old browsers */
+background: -moz-linear-gradient(top, #dedfe0 0%, #b8bec1 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#dedfe0), color-stop(100%,#b8bec1)); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top, #dedfe0 0%,#b8bec1 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top, #dedfe0 0%,#b8bec1 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top, #dedfe0 0%,#b8bec1 100%); /* IE10+ */
+background: linear-gradient(to bottom, #dedfe0 0%,#b8bec1 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#dedfe0', endColorstr='#b8bec1',GradientType=0 ); /* IE6-9 */
+	margin: 0;
+	padding:0;
+	text-align: center;
+}
+
+img {
+	width:50%;
+	margin-top:3vw;
+}
+
+span {
+	color:rgb(0,128,255);
+	font-weight:bold;
+}
+
+h1  {
+	color:#FFF;
+	font-family: gill sans;
+	letter-spacing:.5vw;
+	font-weight: lighter;
+	margin-top:0;
+
+}
+
+input {
+	width:30vw;
+	height:3vw;
+	padding-left:1vw;
+	font-size:1.3vw;
+	font-family:gill sans;
+	font-weight: lighter;
+	background:transparent;
+	border:1px solid white;
+	box-shadow:inset 0 0 0;
+	color:#FFF;
+}
+
+input::-webkit-input-placeholder {
+	color:white;
+}
+
+
+input:focus {
+	outline:none;
+}
+	a  {
+		cursor: pointer;
+	}
+
+.email-btn a {
+	margin:3vw;
+	clear:both;
+	height:1vw;
+	width:12vw;
+	font-family:gill sans;
+	font-size: 1vw;
+	background:none;
+	text-transform:uppercase;
+	color:#fff;
+	position:relative;
+	border:none;
+	overflow: auto;
+	text-decoration: none;
+}
+
+.email-btn {
+	cursor:pointer;
+}
+
+.btn {
+	clear:both;
+	display:inline-block;
+	position:relative;
+	margin-left:2vw;
+	box-sizing:border-box;
+	padding:1.5vw;
+
+}
+
+.btn .bg {
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  outline:#FFF solid 1px;
+  position:absolute;
+}
+
+@keyframes pulse {
+	0% {
+		transform: scale(1,1);
+
+	}
+	100% {
+		transform:scale(1.1,1.35);
+		opacity:1;
+		outline:rgb(0,128,255) solid 1px;
+	}
+}
+
+.btn:hover .bg {
+	 -webkit-animation:pulse 2s infinite alternate;
+}
+
+.email-btn:focus {
+outline:none;
+}
+
+#email {
+	margin:3vw;
+	display:inline-block;
+}
+
