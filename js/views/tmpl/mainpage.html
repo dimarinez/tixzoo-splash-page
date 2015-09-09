@@ -16,7 +16,8 @@
             <div {{action 'clickToggle'}} class="bg"></div>
           </div>
         </div>
-        <span style="color: red;">Must input a valid email address</span>
+        <div class="clear">
+        <br><br><span class="error-notification"> &#9785 must input a valid email address</span><br><br></div>
       {{else}}
         {{input type="email" value=email placeholder="Your email address"}}
         <div class="btn">
