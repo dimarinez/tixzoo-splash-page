@@ -25,6 +25,9 @@ class emailControllerClass {
 	}
 	public function sendEmail($email, $message)
 	{
+		$htmlFile = fopen('../newsletter.html', "r") or die("Unable to open file");
+		$htmlMessage = fread($htmlFile, filesize('../newsletter.html'));
+		fclose($htmlFile);
 		$mail = $this->mailInitializer();
 		$mail->From = 'tixzooadmin@mytixzoo.com';
 		$mail->FromName = 'Tixzoo Newsletter';
@@ -36,8 +39,20 @@ class emailControllerClass {
 		$mail->isHTML(true);                                  // Set email format to HTML
 
 		$mail->Subject = 'Newsletter';
-		$mail->Body    = $message;
+		$mail->Body    = $htmlMessage;
 		$mail->AltBody = $message;
+		if(!$mail->addEmbeddedImage("../NEW-TIXZOO.png", "tixzoo")) {
+			echo "Add tixzoo image failed";
+		}
+		if(!$mail->addEmbeddedImage("../lock-feature.png", "lock")) {
+			echo "Add lock image failed";
+		}
+		if(!$mail->addEmbeddedImage("../money-feature.png", "money")) {
+			echo "Add money image failed";
+		}
+		if(!$mail->addEmbeddedImage("../talk-feature.png", "talk")) {
+			echo "Add talk image failed";
+		}
 		if(!$mail->send()) {
 		    echo 'Message could not be sent.';
 		    echo 'Mailer Error: ' . $mail->ErrorInfo;

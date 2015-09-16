@@ -9,3 +9,4 @@ $user->addNewsletterEmail($_POST['email']);
 $email->sendEmail($_POST['email'],"Thank you for signing up with Tixzoo! You will recieve more information from us shortly.");
 $success["error"] = "false";
 echo json_encode($success["error"]);
+?>
