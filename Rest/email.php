@@ -1,7 +1,7 @@
 <?php
 require 'PHPMailer-master/PHPMailerAutoload.php';
-$htmlFile = fopen('../newsletter.html', "r") or die("Unable to open file");
-$htmlMessage = fread($htmlFile, filesize('../newsletter.html'));
+$htmlFile = fopen('../new-newsletter.html', "r") or die("Unable to open file");
+$htmlMessage = fread($htmlFile, filesize('../new-newsletter.html'));
 fclose($htmlFile);
 $mail = new PHPMailer;
 
@@ -53,6 +53,16 @@ if(!$mail->addEmbeddedImage("../money-feature.png", "money")) {
 if(!$mail->addEmbeddedImage("../talk-feature.png", "talk")) {
 	echo "Add talk failed";
 }
+if(!$mail->addEmbeddedImage("../fi-social-facebook.png", "facebook")) {
+    echo "Add facebook failed";
+}
+if(!$mail->addEmbeddedImage("../fi-social-twitter.png", "twitter")) {
+    echo "Add twitter failed";
+}
+if(!$mail->addEmbeddedImage("../fi-social-instagram.png", "instagram")) {
+    echo "Add instagram failed";
+}
+
 	if(!$mail->send()) {
     echo 'Message could not be sent.';
     echo 'Mailer Error: ' . $mail->ErrorInfo;

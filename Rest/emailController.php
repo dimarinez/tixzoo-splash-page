@@ -25,8 +25,8 @@ class emailControllerClass {
 	}
 	public function sendEmail($email, $message)
 	{
-		$htmlFile = fopen('../newsletter.html', "r") or die("Unable to open file");
-		$htmlMessage = fread($htmlFile, filesize('../newsletter.html'));
+		$htmlFile = fopen('../new-newsletter.html', "r") or die("Unable to open file");
+		$htmlMessage = fread($htmlFile, filesize('../new-newsletter.html'));
 		fclose($htmlFile);
 		$mail = $this->mailInitializer();
 		$mail->From = 'tixzooadmin@mytixzoo.com';
@@ -41,7 +41,7 @@ class emailControllerClass {
 		$mail->Subject = 'Newsletter';
 		$mail->Body    = $htmlMessage;
 		$mail->AltBody = $message;
-		if(!$mail->addEmbeddedImage("../NEW-TIXZOO.png", "tixzoo")) {
+		if(!$mail->addEmbeddedImage("../newsletter-banner.png", "tixzoo")) {
 			echo "Add tixzoo image failed";
 		}
 		if(!$mail->addEmbeddedImage("../lock-feature.png", "lock")) {
@@ -53,6 +53,16 @@ class emailControllerClass {
 		if(!$mail->addEmbeddedImage("../talk-feature.png", "talk")) {
 			echo "Add talk image failed";
 		}
+		if(!$mail->addEmbeddedImage("../fi-social-facebook.png", "facebook")) {
+    	echo "Add facebook failed";
+		}
+		if(!$mail->addEmbeddedImage("../fi-social-twitter.png", "twitter")) {
+    	echo "Add twitter failed";
+		}
+		if(!$mail->addEmbeddedImage("../fi-social-instagram.png", "instagram")) {
+    	echo "Add instagram failed";
+		}
+
 		if(!$mail->send()) {
 		    echo 'Message could not be sent.';
 		    echo 'Mailer Error: ' . $mail->ErrorInfo;
