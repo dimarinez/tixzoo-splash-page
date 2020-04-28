@@ -1,4 +1,3 @@
-# tixzoo-splash-page
-splash-page
+Tixzoo Splash
 
 Ticket exchange startup splash page with email signup
